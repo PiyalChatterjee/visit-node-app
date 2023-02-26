@@ -1,6 +1,6 @@
 const express = require("express");
 const redix = require("redis");
-// const process = require("process");
+const process = require("process");
 
 const app = express();
 const client = redix.createClient({
