@@ -1,6 +1,6 @@
 const express = require("express");
 const redix = require("redis");
-const process = require("process");
+// const process = require("process");
 
 const app = express();
 const client = redix.createClient({
@@ -10,7 +10,7 @@ const client = redix.createClient({
 client.set("visits", 0);
 
 app.get("/", (req, res) => {
-  process.exit(0);
+  // process.exit(0);
   client.get("visits", (err, visits) => {
     res.send(" Number of visits is " + visits);
     client.set("visits", +visits + 1);
